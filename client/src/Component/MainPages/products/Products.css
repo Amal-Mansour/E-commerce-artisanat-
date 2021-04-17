@@ -1,0 +1,10 @@
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 55px !important;
+  padding: 55px 0;
+}
+
+/****************** porduct item******************* */
+
+@import url("../utils/productItem/ProductItem.css");

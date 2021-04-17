@@ -1,0 +1,35 @@
+.laogin-page {
+  max-width: 500px;
+  border: 2px solid rgb(255, 113, 113);
+  border-radius: 5px;
+  margin: 50px auto;
+  background-color: rgb(255, 113, 113);
+}
+
+.laogin-page h2 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: azure;
+}
+
+.formBasicInput {
+  width: 80%;
+  margin-left: 35px;
+}
+
+.btn-user {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.btnLogin {
+  background-color: #5eaaa8 !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.linkRagister {
+  color: azure !important;
+  letter-spacing: 2px;
+  text-decoration: none !important;
+  list-style: none !important;
+}

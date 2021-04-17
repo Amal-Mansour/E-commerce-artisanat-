@@ -1,0 +1,36 @@
+.App {
+  max-width: 1230px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+  box-shadow: 0 0 35px #eee;
+}
+
+/*button {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+/* .logo_style {
+    width: 8%;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+    margin-left: 15px;
+    border-radius: 20px;
+  } */
+/*------------header---------------*/
+@import url("./Component/Header/Header.css");
+
+/*------------Product---------------*/
+@import url("./Component/MainPages/products/Products.css");
+
+/* ------------- Login/Register ----------------- */
+@import url("./Component/MainPages/auth/login/login.css");
+
+/* ---------------- Detail Product --------------- */
+@import url("./Component/MainPages/detaileProduct/detaileProducts.css");
+
+/* ------------ Cart ------------------- */
+@import url("./Component/MainPages/cart/Cart.css");
