@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { GlobalState } from "../../../GlobalState";
 import ProductItem from "../utils/productItem/ProductItem";
 import Loading from "../utils/loading/Loading";
-//import Filters from "./Filter";
+
 function Products() {
   const state = useContext(GlobalState);
   const [products] = state.productsAPI.products;
@@ -10,7 +10,6 @@ function Products() {
 
   return (
     <>
-      {/*<Filters />*/}
       <div className="products">
         l
         {products.map((product) => {

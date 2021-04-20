@@ -31,6 +31,7 @@
     "mongoose": "^5.12.3",
     "proxy": "^1.0.2",
     "react-bootstrap": "^1.5.2",
+    "react-paypal-express-checkout": "^1.0.5",
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {

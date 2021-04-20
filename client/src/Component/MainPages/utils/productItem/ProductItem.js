@@ -29,15 +29,3 @@ function ProductItem({ product, isAdmin }) {
 }
 
 export default ProductItem;
-
-{
-  /*<div className="style-icon">
-          <Link to="/cart">
-            <img src={Cart} alt="cart" width="20%" />
-          </Link>
-          <Link to={`/detail/${product._id}`}>
-            {" "}
-            <img src={heart} alt="heart" width="20%" className="heart" />
-          </Link>
-        </div>*/
-}

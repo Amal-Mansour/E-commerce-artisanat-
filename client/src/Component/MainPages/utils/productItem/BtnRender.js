@@ -25,7 +25,7 @@ function BtnRender({ product }) {
           </>
         ) : (
           <>
-            <Link to="#!" onClick={() => addCart(product)}>
+            <Link to="/#!" onClick={() => addCart(product)}>
               <img src={Cart} alt="cart" width="20%" />
             </Link>
             <Link to={`/detail/${product._id}`}>

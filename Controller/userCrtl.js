@@ -42,7 +42,7 @@ const userCtrl = {
       if (!user) return res.status(400).send({ msg: "User does not exist." });
 
       const isMatch = await bcrypt.compare(password, user.password);
-      if (!isMatch) return res.status(400).send({ msg: "Incorrect password." });
+      if (!isMatch) return res.status(400).send({ msg: "Bad Credential." });
 
       // If login success , create access token and refresh token
       const accesstoken = createAccessToken({ id: user._id });
@@ -55,15 +55,15 @@ const userCtrl = {
 
       res.json({ accesstoken });
     } catch (err) {
-      return res.status(500).json({ msg: err.message });
+      return res.status(500).json({ errors: [{ msg: "Bad Credential" }] });
     }
   },
   logout: async (req, res) => {
     try {
       res.clearCookie("refreshtoken", { path: "/user/refresh_token" });
       return res.send({ msg: "logged out" });
-    } catch (err) {
-      return res.status(500).send({ msg: err.message });
+    } catch (error) {
+      return res.status(500).send({ msg: error.message });
     }
   },
 
@@ -94,7 +94,7 @@ const userCtrl = {
   addCart: async (req, res) => {
     try {
       const user = await Users.findById(req.user.id);
-      if (!user) return res.status(400).send({ msg: "User does not exist." });
+      if (!user) return res.status(400).json({ msg: "User does not exist." });
 
       await Users.findOneAndUpdate(
         { _id: req.user.id },
@@ -105,7 +105,7 @@ const userCtrl = {
 
       return res.json({ msg: "Added to cart" });
     } catch (err) {
-      return res.status(500).send({ msg: err.message });
+      return res.status(500).json({ msg: err.message });
     }
   },
 };

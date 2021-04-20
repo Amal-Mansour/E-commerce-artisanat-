@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const categoryCtrl = require("../Controller/cateroryCrtl");
+const categoryCtrl = require("../Controller/categoryCrtl");
 const auth = require("../middleware/auth");
 const authAdmin = require("../middleware/authAmin");
 

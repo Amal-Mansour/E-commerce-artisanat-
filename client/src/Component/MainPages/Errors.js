@@ -1,7 +1,7 @@
 import React from "react";
 
 const Errors = () => {
-  return <div>errors</div>;
+  return <div> 404 Not | found</div>;
 };
 
 export default Errors;

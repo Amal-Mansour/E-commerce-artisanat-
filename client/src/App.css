@@ -34,3 +34,7 @@
 
 /* ------------ Cart ------------------- */
 @import url("./Component/MainPages/cart/Cart.css");
+
+/* ------------ Category------------------- */
+
+@import url("./Component/MainPages/category/Category.css");
