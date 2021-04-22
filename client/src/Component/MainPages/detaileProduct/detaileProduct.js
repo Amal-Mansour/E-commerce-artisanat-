@@ -42,7 +42,7 @@ function DetailProduct() {
           </p>
           {/* <p>Sold: {detailProduct.sold}</p> */}
 
-          <Link to="/cart" className="cart">
+          <Link to="/login" className="cart">
             <img src={bayNow} alt="bay" width="15%" />
           </Link>
         </div>

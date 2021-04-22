@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { GlobalState } from "../../../GlobalState";
 import ProductItem from "../utils/productItem/ProductItem";
 import Loading from "../utils/loading/Loading";
+import Filter from "./Filter";
+import ControlledCarousel from "./ControlledCarousel";
 import axios from "axios";
 
 function Products() {
@@ -63,6 +65,9 @@ function Products() {
 
   return (
     <>
+      <ControlledCarousel />
+
+      <Filter />
       {isAdmin && (
         <div className="delete-all">
           <span>Select all</span>
