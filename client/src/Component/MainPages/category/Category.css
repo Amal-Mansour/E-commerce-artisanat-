@@ -22,7 +22,7 @@ button {
   height: 35px;
   border: none;
   outline: none;
-  border-bottom: 1px solid #555;
+  border-bottom: 2px solid #ff7171;
 }
 
 .categories button {

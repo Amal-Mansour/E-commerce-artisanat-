@@ -6,7 +6,7 @@ import Cart from "../../../../assets/panier.png";
 import Edit from "../../../../assets/edit.png";
 import delet from "../../../../assets/delete.jpg";
 
-function BtnRender({ product }) {
+function BtnRender({ product, deleteProduct }) {
   const state = useContext(GlobalState); //
   const [isAdmin] = state.usersAPI.isAdmin;
   const addCart = state.usersAPI.addCart;
@@ -20,7 +20,15 @@ function BtnRender({ product }) {
             </Link>
             <Link>
               {" "}
-              <img src={delet} alt="heart" width="20%" className="heart" />
+              <img
+                src={delet}
+                alt="delete"
+                width="20%"
+                className="heart"
+                onClick={() =>
+                  deleteProduct(product._id, product.images.public_id)
+                }
+              />
             </Link>
           </>
         ) : (

@@ -9,7 +9,6 @@ function Categories() {
   const [category, setCategory] = useState("");
   const [token] = state.token;
   const [callback, setCallback] = state.categoriesAPI.callback;
-
   const [onEdit, setOnEdit] = useState(false);
   const [id, setID] = useState("");
 

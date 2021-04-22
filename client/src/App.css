@@ -38,3 +38,6 @@
 /* ------------ Category------------------- */
 
 @import url("./Component/MainPages/category/Category.css");
+
+/* ------------------- Create Product -------------- */
+@import url("./Component/MainPages/createProduct/createProduct.css");

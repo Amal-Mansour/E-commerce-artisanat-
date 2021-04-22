@@ -21,6 +21,7 @@
 }
 .link:hover {
   color: azure;
+  border-bottom: 3px solid white !important;
 }
 
 .link:hover {

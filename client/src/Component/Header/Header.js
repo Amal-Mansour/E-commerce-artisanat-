@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { GlobalState } from "../../GlobalState";
 import Menu from "../../assets/bars-solid (1).svg";
 import Close from "../../assets/times-solid (1).svg";
@@ -9,13 +9,13 @@ import axios from "axios";
 import "./Header.css";
 function Header() {
   const state = useContext(GlobalState);
-  const [isLogged, setIsLogged] = state.usersAPI.isLogged;
-  const [isAdmin, setIsAdmin] = state.usersAPI.isAdmin;
+  const [isLogged] = state.usersAPI.isLogged;
+  const [isAdmin] = state.usersAPI.isAdmin;
   const [cart] = state.usersAPI.cart;
 
   const logoutUser = async () => {
     await axios.get("/user/logout");
-    localStorage.clear();
+    localStorage.removeItem("firstLogin");
     window.location.href = "/";
   };
   const adminRouter = () => {
@@ -92,8 +92,7 @@ function Header() {
 
 export default Header;
 
-{
-  /*<NavDropdown title="Category" className="category">
+/*<NavDropdown title="Category" className="category">
             <NavDropdown.Item href="#action/3.1">
               Carpet & Textile
             </NavDropdown.Item>
@@ -102,7 +101,7 @@ export default Header;
             </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">Jwelery</NavDropdown.Item>
             {/* <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item> */
-}
+
 //          </NavDropdown>*/}
 //// {
 //   categories.map(category => (
