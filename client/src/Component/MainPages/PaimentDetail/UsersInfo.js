@@ -5,6 +5,8 @@ import { CountryDropdown } from "react-country-region-selector";
 //import axios from "axios";
 import "./UserInfo.css";
 
+//import { toast } from "react-toastify";
+
 function UsersInfo() {
   const state = useContext(GlobalState);
   const [info, setInfo] = useState({
@@ -16,48 +18,55 @@ function UsersInfo() {
     country: "",
     postal: "",
   });
-  //const [cart, setCart] = state.usersAPI.cart;
+  //const [payment, setPayment] = useState({});
+  const [cart, setCart] = state.usersAPI.cart;
   //const [isLogged] = state.usersAPI.isLogged;
   //const [isAdmin] = state.usersAPI.isAdmin;
-  //const [token] = state.token;
+  const [token] = state.token;
+  //console.log(payment);
 
   const onChangeInput = (e) => {
     const { name, value } = e.target;
     setInfo({ ...info, [name]: value });
   };
 
-  const paymentSubmit = (e) => {
-    e.preventdefault();
-    console.log(info);
-  };
-
-  //  const paymentSubmit = async (e, { addToCart }) => {
-  //    e.preventdefault();
+  //const paymentSubmit = async (e) => {
+  //  e.preventDefault();
+  //  // console.log(info);
+  //  try {
+  //    const newOrder = await axios.post("/api/payment", { ...info });
   //
-  //    await axios.post(
-  //      "/api/payment",
-  //      { ...info },
-  //      {
-  //        headers: { Authorization: token },
-  //      }
-  //    );
-  //    setCart([]);
-  //    addToCart([]);
-  //    alert("you have successfully placed an order");
-  //  };
+  //  } catch (err) {
+  //    alert(err.response.data.msg);
+  //  }
+  //};
+  //const paymentSubmit = async (e) => {
+  //  console.log(info);
+  //  await axios.post(
+  //    "/api/payment",
+  //    { ...info },
+  //    {
+  //      headers: { Authorization: token },
+  //    }
+  //  );
+  //  setCart([]);
+  //  //setPayment([]);
+  //  alert("you have successfully placed an order");
+  //};
 
   return (
     <div className="users">
       <div>
         <div className="usersInfo">
           <form className="formPaiment">
+            {/*onSubmit={paymentSubmit}*/}
             <div className="display-name">
               <input
                 className="info-user"
                 placeholder="First name"
                 name="First_name"
                 value={info.fname}
-                onChange={setInfo}
+                onChange={onChangeInput}
                 type="text"
               />
               <input
@@ -65,7 +74,7 @@ function UsersInfo() {
                 placeholder="last name"
                 name="last_name"
                 value={info.lname}
-                onChange={setInfo}
+                onChange={onChangeInput}
                 type="text"
               />
             </div>
@@ -75,7 +84,7 @@ function UsersInfo() {
                 placeholder="Phone"
                 name="phone"
                 value={info.phone}
-                onChange={setInfo}
+                onChange={onChangeInput}
                 type="text"
               />
               <input
@@ -83,7 +92,7 @@ function UsersInfo() {
                 placeholder="Email"
                 name="Email"
                 value={info.email}
-                onChange={setInfo}
+                onChange={onChangeInput}
                 type="text"
               />
             </div>
@@ -93,7 +102,7 @@ function UsersInfo() {
                 placeholder="Adress"
                 name="Adress"
                 value={info.adress}
-                onChange={setInfo}
+                onChange={onChangeInput}
                 type="text"
                 rows={3}
               />
@@ -102,7 +111,7 @@ function UsersInfo() {
                 className="info-user"
                 valueType="short"
                 value={info.country}
-                onChange={setInfo}
+                onChange={onChangeInput}
                 name=""
               />
               <input
@@ -110,11 +119,11 @@ function UsersInfo() {
                 placeholder="Postal code"
                 name="Postal_code"
                 value={info.postal}
-                onChange={setInfo}
+                onChange={onChangeInput}
                 type="text"
               />
             </div>
-            <Button onClick={paymentSubmit} className="send-btn">
+            <Button type="submit" className="send-btn">
               Send
             </Button>
           </form>

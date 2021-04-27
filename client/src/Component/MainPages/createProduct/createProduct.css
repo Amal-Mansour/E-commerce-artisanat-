@@ -74,7 +74,7 @@
 
 .create_product .btn3 {
   width: 90px !important;
-  background: #555 !important;
+  background: linear-gradient(to left, #28b5b5, #f0e4d7) !important;
   color: white !important;
   margin-left: 10px !important;
   text-transform: uppercase;

@@ -52,16 +52,10 @@ function Header() {
           activeClassName="is-active"
           exact={true}
         >
-          History
+          Payment Detail
         </NavLink>
 
-        <NavLink
-          to="/"
-          className="link"
-          activeClassName="is-active"
-          exact={true}
-          onClick={logoutUser}
-        >
+        <NavLink to="/" className="link" exact={true} onClick={logoutUser}>
           logout
         </NavLink>
       </>
@@ -75,7 +69,7 @@ function Header() {
           <img src={Menu} alt="menu" width="20" />
         </div>
         <img src={Logo} alt="logo" className="logo_style" />
-        <NavLink to="/" className="link">
+        <NavLink to="/" className="title">
           {isAdmin ? "ADMIN" : "LemDina ShoP"}
         </NavLink>
 

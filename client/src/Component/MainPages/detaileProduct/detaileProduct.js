@@ -7,10 +7,10 @@ import "./detaileProducts.css";
 
 function DetailProduct() {
   const params = useParams();
-  //console.log(params);
+
   const state = useContext(GlobalState);
   const [products] = state.productsAPI.products;
-  //  const addCart = state.userAPI.addCart;
+  const [isLogged] = state.usersAPI.isLogged;
   const [detailProduct, setDetailProduct] = useState([]);
 
   useEffect(() => {
@@ -46,10 +46,15 @@ function DetailProduct() {
             modern uses with authenticity.
           </p>
           <p>Sold:50%</p>
-
-          <Link to="/login" className="cart">
-            <img src={bayNow} alt="bay" width="15%" />
-          </Link>
+          {!isLogged ? (
+            <Link to="/login" className="cart">
+              <img src={bayNow} alt="bay" width="15%" />
+            </Link>
+          ) : (
+            <Link to="/cart" className="cart">
+              <img src={bayNow} alt="bay" width="15%" />
+            </Link>
+          )}
         </div>
       </div>
       <div>

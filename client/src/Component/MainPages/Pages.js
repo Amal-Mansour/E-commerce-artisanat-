@@ -9,6 +9,8 @@ import Categories from "./category/Category";
 import CreateProducts from "./createProduct/CreateProducts";
 import UsersInfo from "./PaimentDetail/UsersInfo";
 import History from "./history/History";
+import PaymentAdmin from "./PaimentDetail/PaymentAdmin";
+
 import Error from "./Errors";
 import { GlobalState } from "../../GlobalState";
 
@@ -36,6 +38,10 @@ function MainPages() {
       />
       <Route path="/set_Information" component={isLogged ? UsersInfo : Error} />
       <Route path="/history" component={isLogged ? History : Error} />
+      <Route
+        path="/Payment_detail"
+        component={isAdmin ? PaymentAdmin : Error}
+      />
       <Route path="/cart" component={Cart} />
       <Route path="/*" component={Error} />
     </Switch>
