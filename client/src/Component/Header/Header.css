@@ -4,7 +4,7 @@
 .title {
   text-decoration: none !important;
   list-style: none !important;
-  color: azure !important;
+  color: #ff7171 !important;
   padding: 5px;
   text-shadow: 5px !important;
   font-size: 28px;
@@ -16,16 +16,20 @@
   list-style: none !important;
   text-transform: uppercase !important;
   font-size: 15px;
+  font-weight: 600;
   padding: 15px;
-  color: black;
+  color: #ff7171;
 }
 .link:hover {
-  color: azure;
-  border-bottom: 3px solid white !important;
+  color: black;
 }
 
 .link:hover {
   transform: scale(1.4) !important;
+}
+
+.is-active {
+  border-bottom: 3px solid #ff7171;
 }
 
 header .menu {
@@ -42,7 +46,7 @@ header .menu {
   align-items: center !important;
 }
 .nav-container {
-  background-color: #ff7171 !important;
+  background-color: whitesmoke !important;
 }
 .cart-icon {
   position: relative;
@@ -58,18 +62,4 @@ header .menu {
   right: -7px;
   padding: 5px 7px;
   font-size: 10px;
-}
-
-.category {
-  text-decoration: none !important;
-  list-style: none !important;
-  text-transform: uppercase !important;
-  font-weight: bold;
-  font-size: 13px;
-  padding: 5px;
-  color: black;
-}
-
-.caregory:hover {
-  color: azure !important;
 }

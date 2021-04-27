@@ -1,0 +1,27 @@
+table,
+th,
+td {
+  margin-top: 90px;
+  margin-left: 150px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 5px;
+}
+th {
+  text-align: center;
+}
+
+.hitory {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.history-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

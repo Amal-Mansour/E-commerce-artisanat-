@@ -4,6 +4,8 @@ import { GlobalState } from "../../../GlobalState";
 import { Form, Button } from "react-bootstrap";
 import Loading from "../utils/loading/Loading";
 import { useHistory, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./createProduct.css";
 
 const initialState = {
@@ -52,17 +54,31 @@ function CreateProducts() {
     e.preventDefault();
 
     try {
-      if (!isAdmin) return alert("You 're not authorized...!!");
+      if (!isAdmin)
+        return toast.error("You 're not authorized...!!", {
+          position: toast.POSITION.TOP_RIGHT,
+          className: "foo-bar",
+        });
       const file = e.target.files[0];
 
-      if (!file) return alert("File not exist...!!");
+      if (!file)
+        return toast.error("File not exist...!!", {
+          position: toast.POSITION.TOP_RIGHT,
+          className: "foo-bar",
+        });
 
       if (file.size > 1024 * 1024)
         //1mb
-        return alert("Size too large...!!");
+        return toast.warning("Size too large...!!", {
+          position: toast.POSITION.TOP_RIGHT,
+          className: "foo-bar",
+        });
 
       if (file.type !== "image/jpeg" && file.type !== "image/png")
-        return alert("File format is incorrect...!!");
+        return toast.warning("File format is incorrect...!!", {
+          position: toast.POSITION.TOP_RIGHT,
+          className: "foo-bar",
+        });
 
       let formData = new FormData();
       formData.append("file", file);
@@ -76,7 +92,10 @@ function CreateProducts() {
       setLoading(false);
       setImages(res.data);
     } catch (err) {
-      alert(err.response.data.msg);
+      toast.error(err.response.data.msg, {
+        position: toast.POSITION.TOP_RIGHT,
+        className: "foo-bar",
+      });
     }
   };
 
@@ -111,8 +130,16 @@ function CreateProducts() {
     e.preventDefault();
 
     try {
-      if (!isAdmin) return alert("You 're not authorized...!!");
-      if (!images) return alert("no Image Upload...!!");
+      if (!isAdmin)
+        return toast.error("You 're not authorized...!!", {
+          position: toast.POSITION.TOP_RIGHT,
+          className: "foo-bar",
+        });
+      if (!images)
+        return toast.error("no Image Upload...!!", {
+          position: toast.POSITION.TOP_RIGHT,
+          className: "foo-bar",
+        });
 
       if (onEdit) {
         await axios.put(
@@ -135,7 +162,10 @@ function CreateProducts() {
       setCallback(!callback);
       history.push("/");
     } catch (err) {
-      alert(err.response.data.msg);
+      toast.error(err.response.data.msg, {
+        position: toast.POSITION.TOP_RIGHT,
+        className: "foo-bar",
+      });
     }
   };
 
@@ -221,6 +251,8 @@ function CreateProducts() {
             value={product.category}
             onChange={handleChangeInput}
           >
+            {" "}
+            <option>Categoris</option>
             {categories.map((category) => (
               <option value={category._id} key={category._id}>
                 {category.name}

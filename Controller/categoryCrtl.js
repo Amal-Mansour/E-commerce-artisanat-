@@ -23,7 +23,7 @@ const categoryCtrl = {
       const newCategory = new Category({ name });
 
       await newCategory.save();
-      return res.send({ msg: "Created a category" });
+      return res.send({ msg: "Category created with success" });
     } catch (err) {
       return res.status(400).send({ msg: err.message });
     }
@@ -38,7 +38,7 @@ const categoryCtrl = {
         });
 
       await Category.findByIdAndDelete(req.params.id);
-      res.send({ msg: "Deleted a Category" });
+      res.send({ msg: " Category deleted with success" });
     } catch (err) {
       return res.status(500).json({ msg: err.message });
     }
@@ -49,7 +49,7 @@ const categoryCtrl = {
       const { name } = req.body;
       await Category.findOneAndUpdate({ _id: req.params.id }, { name });
 
-      res.send({ msg: "Updated a category" });
+      res.send({ msg: " Category updated  with success" });
     } catch (err) {
       return res.status(500).json({ msg: err.message });
     }

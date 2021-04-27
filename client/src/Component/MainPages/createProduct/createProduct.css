@@ -23,13 +23,13 @@
   outline: none;
 }
 #file_up::before {
-  content: url("https://www.ebb.alsace/wp-content/uploads/2017/09/Appareil-Photos002.png");
+  content: url("../../../assets/images\ \(2\).jfif");
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background: rgb(224, 224, 224);
+  background: white;
   display: flex;
   justify-content: center;
   align-items: center;

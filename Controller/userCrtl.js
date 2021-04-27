@@ -22,8 +22,8 @@ const userCtrl = {
       // save the users data in mongodb
       await newUser.save();
       //create the acess token by json web token to authentification
-      const accesstoken = createAccessToken({ _id: newUser._id });
-      const refreshtoken = createRefreshToken({ _id: newUser._id });
+      const accesstoken = createAccessToken({ _id: newUser.id });
+      const refreshtoken = createRefreshToken({ _id: newUser.id });
       res.cookie("refreshtoken", refreshtoken, {
         httpOnly: true,
         path: "/user/refresh_token",
@@ -80,14 +80,14 @@ const userCtrl = {
         return res.status(400).send({
           msg: "please Login or Register",
         });
-      const accesstoken = createAccessToken({ id: user.id });
+      const accesstoken = createAccessToken({ _id: user.id });
       res.send({ user, accesstoken });
     });
   },
   getUser: async (req, res) => {
     try {
-      const user = await Users.findById(req.user.id).select("-password");
-      if (!user) return res.status(400).send({ msg: "user does not exist!!!" });
+      const user = await Users.findById(req.user._id).select("-password");
+      if (!user) return res.status(400).send({ msg: "User does not exist" });
       res.send(user);
     } catch (error) {
       return res.status(500).send({ msg: error.message });

@@ -1,8 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
 import { GlobalState } from "../../../GlobalState";
 import axios from "axios";
-import PaypalButton from "./PaypalButton";
 import { Button } from "react-bootstrap";
+import PaimentDetail from "../PaimentDetail/PaimentDetail";
+
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./Cart.css";
 function Cart() {
   const state = useContext(GlobalState);
@@ -51,7 +54,13 @@ function Cart() {
   };
 
   const removeProduct = (id) => {
-    if (window.confirm("Do you want to delete this product")) {
+    if (
+      (toast.warn("this product will completly  deleted from cart"),
+      {
+        position: toast.POSITION.TOP_RIGHT,
+        className: "foo-bar",
+      })
+    ) {
       cart.forEach((item, index) => {
         if (item._id === id) {
           cart.splice(index, 1);
@@ -62,9 +71,9 @@ function Cart() {
     }
   };
 
-  const tranSuccess = async (payment) => {
-    console.log(payment);
-  };
+  //const tranSuccess = async (payment) => {
+  //  console.log(payment);
+  //};
 
   if (cart.length === 0) {
     return (
@@ -76,7 +85,9 @@ function Cart() {
     <div>
       <div className="total">
         <h3>Total : $ {total}</h3>
-        <PaypalButton total={total} tranSuccess={tranSuccess} />
+        <PaimentDetail />
+
+        {/*<PaypalButton total={total} tranSuccess={tranSuccess} />*/}
       </div>
 
       {cart.map((product) => (

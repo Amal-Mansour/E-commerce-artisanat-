@@ -1,0 +1,83 @@
+.usersInfo {
+  width: 650px;
+  height: 750px;
+  border: 1px solid rgb(255, 113, 113);
+  border-radius: 5px;
+  margin-top: 50px;
+  margin-left: 450px;
+  background-color: white;
+}
+/*
+.formPaiment {
+  width: 85%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #999;
+  outline: none;
+  background: transparent;
+  margin-top: 50px;
+}
+*/
+.send-btn {
+  width: 40% !important;
+  padding: 10px 50px !important;
+  cursor: pointer !important;
+  display: block !important;
+  background: linear-gradient(to right, #ff7171, #f0e4d7) !important;
+  border: 0 !important;
+  outline: none !important;
+  border-radius: 30px !important;
+  padding-top: 5px !important;
+  margin-left: 200px !important;
+  margin-top: 65px;
+}
+
+.info-user {
+  width: 30%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 2px solid rgb(255, 113, 113);
+  outline: none;
+  background: transparent;
+  margin-top: 25px;
+  background-color: white;
+}
+
+.formPaiment {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.formPaiment {
+  margin-top: 25px;
+}
+
+.display-name {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.display-contact {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.adress {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}

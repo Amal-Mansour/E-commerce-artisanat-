@@ -1,21 +1,20 @@
-.form-box {
+.login_page {
   width: 450px;
-  height: 500px;
+  height: 550px;
   border: 1px solid rgb(255, 113, 113);
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: 50px;
   margin-left: 850px;
   background-color: white;
 }
-
-.button-box {
-  width: 250px;
+.button-boxs {
+  width: 50px;
   margin: 35 auto;
   position: relative;
   box-shadow: 0 0 20px #ff7171;
   border-radius: 30px;
 }
-.toggel-btn {
+.toggel-button {
   padding: 10px 30px;
   cursor: pointer;
   background: transparent;
@@ -26,8 +25,7 @@
   font-weight: 500px;
   padding-top: 5px;
 }
-
-.button-box {
+.button-boxs {
   top: 0%;
   left: 0;
   width: 110px;
@@ -47,7 +45,6 @@
   width: 280px;
   transition: 0.5s;
 }
-
 .formBasicInput {
   width: 95%;
   padding: 10px 0;
@@ -65,25 +62,34 @@
   justify-content: space-around;
   align-items: center;
   margin-top: 55px;
-  list-style: none;
 }
 
-.fa-facebook:hover {
-  text-decoration: none !important;
-  color: white !important;
-}
-.fa-pinterest:hover {
-  text-decoration: none !important;
-  color: white !important;
+.fa-facebook {
+  background-color: #3b5998;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 50%;
+  text-decoration: none;
 }
 
-.fa-twitter:hover {
-  text-decoration: none !important;
-  color: white !important;
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+  padding: 14px 14px;
+  border-radius: 50%;
 }
-.fa-google:hover {
-  text-decoration: none !important;
-  color: white !important;
+
+.fa-twitter {
+  background-color: #55acee;
+  color: white;
+  padding: 14px 14px;
+  border-radius: 50%;
+}
+.fa-google {
+  background-color: #dd4b39;
+  color: white;
+  padding: 14px 14px;
+  border-radius: 50%;
 }
 
 .submit-btn {
@@ -101,70 +107,4 @@
 
 .check {
   margin-left: 15px !important;
-}
-.login_hier {
-  width: 450px;
-  height: 100px;
-  margin-top: 80px;
-  background-color: #28b5b5;
-  clip-path: polygon(
-    0% 20%,
-    60% 20%,
-    60% 0%,
-    100% 50%,
-    60% 100%,
-    60% 80%,
-    0% 80%
-  );
-  display: flex;
-  justify-content: center;
-  margin-left: 70px;
-  margin-top: 10px;
-  animation: mymove 5s infinite;
-}
-
-.login_animation {
-  color: white;
-  font-weight: 700;
-  letter-spacing: 3px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  margin-right: 150px;
-}
-
-@keyframes mymove {
-  /*0% {
-    background-color: red;
-    left: 0px;
-    top: 0px;
-  }
-  25% {
-    background-color: yellow;
-    left: 200px;
-    top: 0px;
-  }
-  50% {
-    background-color: blue;
-    left: 200px;
-    top: 200px;
-  }
-  75% {
-    background-color: green;
-    left: 0px;
-    top: 200px;
-  }
-  100% {
-    background-color: red;
-    left: 0px;
-    top: 0px;
-  }*/
-
-  from {
-    left: 0px;
-  }
-  to {
-    left: 300px;
-  }
 }

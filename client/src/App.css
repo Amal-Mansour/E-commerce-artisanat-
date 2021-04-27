@@ -6,14 +6,22 @@
   box-shadow: 0 0 35px #eee;
 }
 
-/* .logo_style {
-    width: 8%;
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 10px;
-    margin-left: 15px;
-    border-radius: 20px;
-  } */
+.logo_style {
+  width: 4%;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 15px;
+  border-radius: 20px;
+}
+
+.foo-bar {
+  margin-top: 80px;
+  margin-right: 10px;
+}
+
+.Link:active {
+  border-bottom: 3px solid white !important;
+}
 /*------------header---------------*/
 @import url("./Component/Header/Header.css");
 

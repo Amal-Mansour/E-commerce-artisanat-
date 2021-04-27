@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function UsersAPI(token) {
   const [isLogged, setIsLogged] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [cart, setCart] = useState([]);
+  //const [history, setHistory] = useState([])
 
   useEffect(() => {
     if (token) {
@@ -16,8 +19,11 @@ function UsersAPI(token) {
           setIsLogged(true);
           res.data.role === 1 ? setIsAdmin(true) : setIsAdmin(false);
           setCart(res.data.cart);
-        } catch (error) {
-          alert(error.response.data.msg);
+        } catch (err) {
+          toast.error(err.response.data.msg, {
+            position: toast.POSITION.TOP_RIGHT,
+            className: "foo-bar",
+          });
         }
       };
       getUser();

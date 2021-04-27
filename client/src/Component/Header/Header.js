@@ -6,6 +6,7 @@ import Cart from "../../assets/shopping-cart-solid.svg";
 import { Link, NavLink } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
 import axios from "axios";
+import Logo from "../../assets/myLogo.png";
 import "./Header.css";
 function Header() {
   const state = useContext(GlobalState);
@@ -21,11 +22,21 @@ function Header() {
   const adminRouter = () => {
     return (
       <>
-        <NavLink to="/create_product" className="link">
+        <NavLink
+          to="/create_product"
+          className="link"
+          activeClassName="is-active"
+          exact={true}
+        >
           Create Product
         </NavLink>
 
-        <NavLink to="/category" className="link">
+        <NavLink
+          to="/category"
+          className="link"
+          activeClassName="is-active"
+          exact={true}
+        >
           Categories
         </NavLink>
       </>
@@ -35,11 +46,22 @@ function Header() {
   const loggedRouter = () => {
     return (
       <>
-        <NavLink to="/history" className="link">
+        <NavLink
+          to="/history"
+          className="link"
+          activeClassName="is-active"
+          exact={true}
+        >
           History
         </NavLink>
 
-        <NavLink to="/" className="link" onClick={logoutUser}>
+        <NavLink
+          to="/"
+          className="link"
+          activeClassName="is-active"
+          exact={true}
+          onClick={logoutUser}
+        >
           logout
         </NavLink>
       </>
@@ -50,14 +72,20 @@ function Header() {
     <header>
       <Navbar className="nav-container">
         <div className="menu">
-          <img src={Menu} alt="menu" width="30" />
+          <img src={Menu} alt="menu" width="20" />
         </div>
-        <Link to="/" className="title">
+        <img src={Logo} alt="logo" className="logo_style" />
+        <NavLink to="/" className="link">
           {isAdmin ? "ADMIN" : "LemDina ShoP"}
-        </Link>
+        </NavLink>
 
         <Nav className="mr-auto">
-          <NavLink to="/" className="link">
+          <NavLink
+            to="/"
+            className="link"
+            activeClassName="is-active"
+            exact={true}
+          >
             {isAdmin ? "Products" : "Shop"}
           </NavLink>
           {isAdmin && adminRouter()}
@@ -65,7 +93,12 @@ function Header() {
           {isLogged ? (
             loggedRouter()
           ) : (
-            <NavLink to="/login" className="link">
+            <NavLink
+              to="/login"
+              className="link"
+              activeClassName="is-active"
+              exact={true}
+            >
               Register ✥ Login
             </NavLink>
           )}
@@ -91,22 +124,3 @@ function Header() {
 }
 
 export default Header;
-
-/*<NavDropdown title="Category" className="category">
-            <NavDropdown.Item href="#action/3.1">
-              Carpet & Textile
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              pottery & ceramics
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Jwelery</NavDropdown.Item>
-            {/* <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item> */
-
-//          </NavDropdown>*/}
-//// {
-//   categories.map(category => (
-//       <option value={"category=" + category._id} key={category._id}>
-//           {category.name}
-//       </option>
-//   ))
-// }

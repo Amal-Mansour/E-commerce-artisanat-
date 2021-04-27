@@ -10,6 +10,7 @@ function Products() {
   const state = useContext(GlobalState);
   const [products, setProducts] = state.productsAPI.products;
   const [isAdmin] = state.usersAPI.isAdmin;
+  const [isLogged] = state.usersAPI.isLogged;
   const [token] = state.token;
   const [callback, setCallback] = state.productsAPI.callback;
   const [loading, setLoading] = useState(false);
@@ -65,9 +66,6 @@ function Products() {
 
   return (
     <>
-      <ControlledCarousel />
-
-      <Filter />
       {isAdmin && (
         <div className="delete-all">
           <span>Select all</span>
@@ -76,8 +74,14 @@ function Products() {
         </div>
       )}
 
+      {!isLogged && (
+        <div>
+          <ControlledCarousel />
+          <Filter />
+        </div>
+      )}
+
       <div className="products">
-        l
         {products.map((product) => {
           return (
             <ProductItem
@@ -91,6 +95,7 @@ function Products() {
           );
         })}
       </div>
+
       {products.length === 0 && <Loading />}
     </>
   );

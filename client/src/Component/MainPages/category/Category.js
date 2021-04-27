@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import { GlobalState } from "../../../GlobalState";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./Category.css";
 
 function Categories() {
@@ -24,7 +26,10 @@ function Categories() {
           }
         );
 
-        alert(res.data.msg);
+        toast.success(res.data.msg, {
+          position: toast.POSITION.TOP_RIGHT,
+          className: "foo-bar",
+        });
       } else {
         const res = await axios.post(
           "/api/category",
@@ -33,13 +38,19 @@ function Categories() {
             headers: { Authorization: token },
           }
         );
-        alert(res.data.msg);
+        toast.success(res.data.msg, {
+          position: toast.POSITION.TOP_RIGHT,
+          className: "foo-bar",
+        });
       }
       setOnEdit(false);
       setCategory("");
       setCallback(!callback);
     } catch (err) {
-      alert(err.response.data.msg);
+      toast.error(err.response.data.msg, {
+        position: toast.POSITION.TOP_RIGHT,
+        className: "foo-bar",
+      });
     }
   };
 
@@ -54,13 +65,18 @@ function Categories() {
       const res = await axios.delete(`/api/category/${id}`, {
         headers: { Authorization: token },
       });
-      alert(res.data.msg);
+      toast.success(res.data.msg, {
+        position: toast.POSITION.TOP_RIGHT,
+        className: "foo-bar",
+      });
       setCallback(!callback);
     } catch (err) {
-      alert(err.response.data.msg);
+      toast.error(err.response.data.msg, {
+        position: toast.POSITION.TOP_RIGHT,
+        className: "foo-bar",
+      });
     }
   };
-
   return (
     <div className="categories">
       <form onSubmit={createCategory}>

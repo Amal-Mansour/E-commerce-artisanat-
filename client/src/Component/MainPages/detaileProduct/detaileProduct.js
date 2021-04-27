@@ -7,12 +7,12 @@ import "./detaileProducts.css";
 
 function DetailProduct() {
   const params = useParams();
-  console.log(params);
+  //console.log(params);
   const state = useContext(GlobalState);
   const [products] = state.productsAPI.products;
   //  const addCart = state.userAPI.addCart;
   const [detailProduct, setDetailProduct] = useState([]);
-  // //
+
   useEffect(() => {
     if (params) {
       products.forEach((product) => {
@@ -25,6 +25,11 @@ function DetailProduct() {
 
   return (
     <div className="products-detailt">
+      <div className="animation">
+        <h6 className="text_animation">
+          Promo codes 40% 50% 70% flash sales free delivery
+        </h6>
+      </div>
       <div className="box-detail">
         <img src={detailProduct.images.url} alt="pro" className="detail-img" />
         <div className="text">
@@ -40,7 +45,7 @@ function DetailProduct() {
             a sense of inventiveness, coming up with unusual ideas to combine
             modern uses with authenticity.
           </p>
-          {/* <p>Sold: {detailProduct.sold}</p> */}
+          <p>Sold:50%</p>
 
           <Link to="/login" className="cart">
             <img src={bayNow} alt="bay" width="15%" />
@@ -48,8 +53,11 @@ function DetailProduct() {
         </div>
       </div>
       <div>
-        <h2>Related products:</h2>
-        <div className="retated-products">
+        <div className="related-product">
+          <h6 className="related_animation ">Related products</h6>
+        </div>
+
+        <div className="retated-cart">
           {products.map((product) => {
             return product.category === detailProduct.category ? (
               <ProductItem key={product._id} product={product} />

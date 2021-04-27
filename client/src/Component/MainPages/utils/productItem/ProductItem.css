@@ -2,11 +2,22 @@
   max-width: 480px;
   overflow: hidden;
   height: 450px;
-  box-shadow: 0 0 15px #ddd;
+  box-shadow: 0 0 15px rgb(168, 168, 168);
   display: flex;
   border-radius: 18px !important;
-  margin-right: 50px;
-  margin-top: 55px;
+  margin-left: 39px;
+  margin-top: 90px;
+}
+
+.product-card:hover {
+  /*transform: perspective(200px) translate3d(60px, 60px, 60px);*/
+  /*-webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+  /*-moz-transform: scale(1.5); /* Firefox */
+  /*-ms-transform: scale(1.5); /* IE 9 */
+  /*transform: scale(1.5);*/
+  /*transform: translate3d(42px, -62px, -135px);*/
+  /*transform: translate3d(100px, 20px, 0);*/
+  transform: scale(1.25);
 }
 
 .image {

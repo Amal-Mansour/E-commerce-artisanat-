@@ -37,13 +37,11 @@ function Filter() {
 
       <Form.Control
         className="search"
-        type="text"
-        type="text"
+        type="search"
         value={search}
         placeholder="Enter your search!"
         onChange={(e) => setSearch(e.target.value.toLowerCase())}
       />
-
       <div className="row sort">
         <Form>
           <Form.Control

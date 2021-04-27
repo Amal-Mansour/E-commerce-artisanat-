@@ -48,5 +48,3 @@ function BtnRender({ product, deleteProduct }) {
 }
 
 export default BtnRender;
-
-// to={`/edit_product/${product._id}`}

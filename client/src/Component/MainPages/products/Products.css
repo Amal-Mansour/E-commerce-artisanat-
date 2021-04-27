@@ -1,8 +1,7 @@
 .products {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 55px !important;
-  padding: 55px 0;
+  margin-left: 110px !important;
 }
 
 /****************** porduct item******************* */
@@ -10,31 +9,35 @@
 @import url("../utils/productItem/ProductItem.css");
 
 .filter_menu {
-  width: 1200px;
-  height: 100px;
-  margin-left: 160px;
-  margin-top: 150px;
-  border-radius: 18px;
+  width: 1510px;
+  height: 50px;
+  margin-left: 5px;
+  margin-top: 70px;
+  border-radius: 12px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #28b5b5;
+  background-color: #ff7171;
 }
 
 .search {
-  width: 60% !important;
+  width: 75% !important;
+  height: 32px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slide_show {
   width: 1350px !important;
   height: 500px !important;
-  margin-left: 30px;
+  margin-left: 50px !important;
 }
 
 .slide_continer {
   display: block !important;
-  margin-top: 90px;
-  margin-left: 90px;
+  margin-top: 70px;
+  margin-left: 60px;
 }
 /*-------------------- Load More ---------------
 .load_more {
