@@ -5,6 +5,7 @@ import heart from "../../../../assets/coeur.png";
 import Cart from "../../../../assets/panier.png";
 import Edit from "../../../../assets/edit.png";
 import delet from "../../../../assets/delete.jpg";
+import './ProductItem.css'
 
 function BtnRender({ product, deleteProduct }) {
   const state = useContext(GlobalState); //
@@ -13,14 +14,13 @@ function BtnRender({ product, deleteProduct }) {
   return (
     <div>
       <div className="style-icon">
-        {isAdmin ? (
+        {isAdmin ? 
           <>
             <Link to={`/edit_product/${product._id}`}>
               <img src={Edit} alt="cart" width="20%" />
             </Link>
-            <Link>
-              {" "}
-              <img
+            <Link to="#!">
+           <img
                 src={delet}
                 alt="delete"
                 width="20%"
@@ -31,17 +31,18 @@ function BtnRender({ product, deleteProduct }) {
               />
             </Link>
           </>
-        ) : (
+         : 
           <>
-            <Link to="/#!" onClick={() => addCart(product)}>
-              <img src={Cart} alt="cart" width="20%" />
+            <Link to="/#!" onClick={() => addCart(product)} >
+           
+              <img src={Cart} alt="cart" width="20%"  />
             </Link>
             <Link to={`/detail/${product._id}`}>
               {" "}
               <img src={heart} alt="heart" width="20%" className="heart" />
             </Link>
           </>
-        )}
+        }
       </div>
     </div>
   );

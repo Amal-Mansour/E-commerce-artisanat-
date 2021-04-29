@@ -1,14 +1,14 @@
-import React, { useContext, useState } from "react";
-import { GlobalState } from "../../../GlobalState";
+import React, {  useState } from "react";
+//import { GlobalState } from "../../../GlobalState";
 import { Button } from "react-bootstrap";
-import { CountryDropdown } from "react-country-region-selector";
-//import axios from "axios";
+//import { CountryDropdown } from "react-country-region-selector";
+import axios from "axios";
 import "./UserInfo.css";
-
-//import { toast } from "react-toastify";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function UsersInfo() {
-  const state = useContext(GlobalState);
+ 
   const [info, setInfo] = useState({
     fname: "",
     lname: "",
@@ -16,65 +16,55 @@ function UsersInfo() {
     email: "",
     adress: "",
     country: "",
+    city: "",
     postal: "",
   });
-  //const [payment, setPayment] = useState({});
-  const [cart, setCart] = state.usersAPI.cart;
-  //const [isLogged] = state.usersAPI.isLogged;
-  //const [isAdmin] = state.usersAPI.isAdmin;
-  const [token] = state.token;
-  //console.log(payment);
 
-  const onChangeInput = (e) => {
+  
+
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setInfo({ ...info, [name]: value });
   };
 
-  //const paymentSubmit = async (e) => {
-  //  e.preventDefault();
-  //  // console.log(info);
-  //  try {
-  //    const newOrder = await axios.post("/api/payment", { ...info });
-  //
-  //  } catch (err) {
-  //    alert(err.response.data.msg);
-  //  }
-  //};
-  //const paymentSubmit = async (e) => {
-  //  console.log(info);
-  //  await axios.post(
-  //    "/api/payment",
-  //    { ...info },
-  //    {
-  //      headers: { Authorization: token },
-  //    }
-  //  );
-  //  setCart([]);
-  //  //setPayment([]);
-  //  alert("you have successfully placed an order");
-  //};
+  const paymentSubmit = async (e) => {
+    e.preventDefault();
+    console.log(info);
+
+    try {
+     await axios.post("/api/payment", { ...info });
+      
+      window.location.href = "/cart";
+      toast.success("order passed sucssefuly", {
+        position: toast.POSITION.TOP_RIGHT,
+        className: "foo-bar",
+      });
+    } catch (err) {
+      alert('order failed');
+    }
+  };
+
 
   return (
     <div className="users">
       <div>
         <div className="usersInfo">
-          <form className="formPaiment">
-            {/*onSubmit={paymentSubmit}*/}
+          <form className="formPaiment" onSubmit={paymentSubmit}>
             <div className="display-name">
               <input
                 className="info-user"
                 placeholder="First name"
-                name="First_name"
+                name="fname"
                 value={info.fname}
-                onChange={onChangeInput}
+                onChange={handleChange}
                 type="text"
               />
               <input
                 className="info-user"
-                placeholder="last name"
-                name="last_name"
-                value={info.lname}
-                onChange={onChangeInput}
+                placeholder="Last name"
+                name="lname"
+                value={info.lanme}
+                onChange={handleChange}
                 type="text"
               />
             </div>
@@ -84,15 +74,15 @@ function UsersInfo() {
                 placeholder="Phone"
                 name="phone"
                 value={info.phone}
-                onChange={onChangeInput}
+                onChange={handleChange}
                 type="text"
               />
               <input
                 className="info-user"
                 placeholder="Email"
-                name="Email"
+                name="email"
                 value={info.email}
-                onChange={onChangeInput}
+                onChange={handleChange}
                 type="text"
               />
             </div>
@@ -100,26 +90,35 @@ function UsersInfo() {
               <textarea
                 className="info-user"
                 placeholder="Adress"
-                name="Adress"
+                name="adress"
                 value={info.adress}
-                onChange={onChangeInput}
+                onChange={handleChange}
                 type="text"
                 rows={3}
               />
 
-              <CountryDropdown
+              <input
                 className="info-user"
+                placeholder="Country"
                 valueType="short"
                 value={info.country}
-                onChange={onChangeInput}
-                name=""
+                onChange={handleChange}
+                name="country"
+              />
+              <input
+                className="info-user"
+                placeholder="City"
+                valueType="short"
+                value={info.city}
+                onChange={handleChange}
+                name="city"
               />
               <input
                 className="info-user"
                 placeholder="Postal code"
-                name="Postal_code"
-                value={info.postal}
-                onChange={onChangeInput}
+                name="postal"
+                value={info.Postal_code}
+                onChange={handleChange}
                 type="text"
               />
             </div>

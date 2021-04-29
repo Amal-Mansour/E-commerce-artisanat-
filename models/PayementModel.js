@@ -4,7 +4,6 @@ const paymentSchema = new mongoose.Schema(
   {
     user_id: {
       type: String,
-      required: true,
     },
     fname: {
       type: String,
@@ -19,22 +18,34 @@ const paymentSchema = new mongoose.Schema(
       required: true,
     },
     phone: {
-      type: number,
+      type: Number,
       required: true,
     },
-    address: {
-      type: Object,
+    adress: {
+      type: String,
+      required: true,
+    },
+    country: {
+      type: String,
+      required: true,
+    },
+    city: {
+      type: String,
+      required: true,
+    },
+    postal: {
+      type: String,
       required: true,
     },
     paymentID: {
       type: String,
-      required: true,
+      require,
     },
 
-    cart: {
-      type: Array,
-      default: [],
-    },
+    //cart: {
+    //  type: Array,
+    //  default: [],
+    //},
     status: {
       type: Boolean,
       default: false,
@@ -49,4 +60,4 @@ const paymentSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("Payments", paymentSchema);
+module.exports = mongoose.model("Payments", paymentSchema, "Payments");

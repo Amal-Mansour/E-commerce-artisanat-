@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { GlobalState } from "../../GlobalState";
 import Menu from "../../assets/bars-solid (1).svg";
 import Close from "../../assets/times-solid (1).svg";
@@ -10,15 +10,23 @@ import Logo from "../../assets/myLogo.png";
 import "./Header.css";
 function Header() {
   const state = useContext(GlobalState);
+  //console.log(state) 
   const [isLogged] = state.usersAPI.isLogged;
   const [isAdmin] = state.usersAPI.isAdmin;
   const [cart] = state.usersAPI.cart;
+  const [menu, setMenu] = useState(false);
+
+
+
 
   const logoutUser = async () => {
     await axios.get("/user/logout");
     localStorage.removeItem("firstLogin");
     window.location.href = "/";
   };
+
+
+
   const adminRouter = () => {
     return (
       <>
@@ -31,12 +39,7 @@ function Header() {
           Create Product
         </NavLink>
 
-        <NavLink
-          to="/category"
-          className="link"
-          activeClassName="is-active"
-          exact={true}
-        >
+        <NavLink to="/category" className="link" activeClassName="is-active" exact={true}>
           Categories
         </NavLink>
       </>
@@ -47,12 +50,12 @@ function Header() {
     return (
       <>
         <NavLink
-          to="/history"
+          to="/Payments_Detail"
           className="link"
           activeClassName="is-active"
           exact={true}
         >
-          Payment Detail
+          Payments Detail
         </NavLink>
 
         <NavLink to="/" className="link" exact={true} onClick={logoutUser}>
@@ -62,11 +65,15 @@ function Header() {
     );
   };
 
+  const styleMenu = {
+    left: menu ? 0 : "-100%",
+  };
+
   return (
     <header>
       <Navbar className="nav-container">
         <div className="menu">
-          <img src={Menu} alt="menu" width="20" />
+          <img src={Menu} alt="menu" width="20" onClick={() => setMenu(!menu)} />
         </div>
         <img src={Logo} alt="logo" className="logo_style" />
         <NavLink to="/" className="title">
@@ -75,6 +82,7 @@ function Header() {
 
         <Nav className="mr-auto">
           <NavLink
+            style={styleMenu}
             to="/"
             className="link"
             activeClassName="is-active"
@@ -99,19 +107,19 @@ function Header() {
         </Nav>
 
         <div className="menu">
-          <img src={Close} alt="close" width="30" />
+          <img src={Close} alt="close" width="30" onClick={() => setMenu(!menu)} />
         </div>
 
-        {isAdmin ? (
-          ""
-        ) : (
-          <div className="cart-icon">
-            <span>{cart.length}</span>
-            <Link to="/cart">
-              <img src={Cart} alt="cart" width="30" />
-            </Link>
-          </div>
-        )}
+        {
+                isAdmin ? '' 
+                :<div className="cart-icon">
+                    <span>{cart.length}</span> 
+                    
+                    <Link to="/cart">
+                        <img src={Cart} alt="" width="30" />
+                    </Link>
+                </div>
+            }
       </Navbar>
     </header>
   );

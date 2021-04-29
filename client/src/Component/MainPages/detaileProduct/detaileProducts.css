@@ -47,11 +47,11 @@
 }
 .description {
   font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .animation {
-  width: 1400px;
+  width: 1510px;
   height: 35px;
   margin-top: 80px;
   background-color: #28b5b5;
@@ -78,24 +78,14 @@
 }
 
 .related-product {
-  width: 450px;
-  height: 100px;
+  width: 1500px;
+  height: 35px;
   margin-top: 80px;
   background-color: #28b5b5;
-  clip-path: polygon(
-    0% 20%,
-    60% 20%,
-    60% 0%,
-    100% 50%,
-    60% 100%,
-    60% 80%,
-    0% 80%
-  );
   display: flex;
   justify-content: center;
-  margin-left: 70px;
+
   margin-top: 10px;
-  animation: swing 4s 5s linear forwards;
 }
 
 .related_animation {
@@ -107,22 +97,17 @@
   display: flex;
   align-items: center;
   margin-right: 150px;
+  animation: scrolling 50s linear infinite;
 }
 
-/*@keyframes swing {
+@keyframes scrolling {
   0% {
-    transform: translateY(350px) rotateZ(0deg);
-  }
-  40% {
-    transform: translateY(350px) rotateZ(90deg);
-  }
-  70% {
-    transform: translateY(350px) rotateZ(70deg);
+    transform: translateX(0);
   }
   100% {
-    transform: translateY(350px) rotateZ(75deg);
+    transform: translateX(100%);
   }
-}*/
+}
 
 .retated-cart {
   display: flex;

@@ -7,8 +7,8 @@ import Register from "./auth/Register/Register";
 import Cart from "./cart/Cart";
 import Categories from "./category/Category";
 import CreateProducts from "./createProduct/CreateProducts";
-import UsersInfo from "./PaimentDetail/UsersInfo";
-import History from "./history/History";
+//import UsersInfo from "./PaimentDetail/UsersInfo";
+//import History from "./history/History";
 import PaymentAdmin from "./PaimentDetail/PaymentAdmin";
 
 import Error from "./Errors";
@@ -36,14 +36,14 @@ function MainPages() {
         exact
         component={isAdmin ? CreateProducts : Error}
       />
-      <Route path="/set_Information" component={isLogged ? UsersInfo : Error} />
-      <Route path="/history" component={isLogged ? History : Error} />
-      <Route
+      {/*<Route path="/set_Information"exact component={isLogged ? UsersInfo : Error} />
+      <Route path="/Payments_Detail" exact component={isLogged ? History : Error} />*/}
+      {/*<Route
         path="/Payment_detail"
         component={isAdmin ? PaymentAdmin : Error}
-      />
-      <Route path="/cart" component={Cart} />
-      <Route path="/*" component={Error} />
+      />*/}
+      <Route path="/cart" exact component={Cart} />
+      <Route path="/*" exact component={Error} />
     </Switch>
   );
 }

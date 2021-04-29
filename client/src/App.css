@@ -19,9 +19,9 @@
   margin-right: 10px;
 }
 
-.Link:active {
-  border-bottom: 3px solid white !important;
-}
+/*.footer-position {
+  position: fixed;
+}*/
 /*------------header---------------*/
 @import url("./Component/Header/Header.css");
 

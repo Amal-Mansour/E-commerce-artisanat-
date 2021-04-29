@@ -1,11 +1,16 @@
+.login_page {
+  display: block;
+}
+
 .form-box {
   width: 450px;
   height: 500px;
   border: 1px solid rgb(255, 113, 113);
   border-radius: 5px;
-  margin-top: 50px;
-  margin-left: 850px;
-  background-color: white;
+  margin-top: 0%;
+  margin-left: 580px;
+  background-color: whitesmoke;
+  animation: slide_Up 1.4s ease;
 }
 
 .button-box {
@@ -99,14 +104,16 @@
   margin-left: 25px !important;
   margin-top: 75px;
 }
-
+.login_page {
+  background-color: #ff7171;
+}
 .check {
   margin-left: 15px !important;
 }
 .login_hier {
   width: 450px;
   height: 100px;
-  margin-top: 80px;
+  margin-top: 20px !important;
   background-color: #28b5b5;
   clip-path: polygon(
     0% 20%,
@@ -120,8 +127,31 @@
   display: flex;
   justify-content: center;
   margin-left: 70px;
-  margin-top: 10px;
-  animation: mymove 5s infinite;
+  margin-top: 0%;
+  animation: flash linear 1s infinite;
+}
+
+@keyframes slide_Up {
+  0% {
+    transform: translateY(350px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .login_animation {
@@ -133,39 +163,4 @@
   display: flex;
   align-items: center;
   margin-right: 150px;
-}
-
-@keyframes mymove {
-  /*0% {
-    background-color: red;
-    left: 0px;
-    top: 0px;
-  }
-  25% {
-    background-color: yellow;
-    left: 200px;
-    top: 0px;
-  }
-  50% {
-    background-color: blue;
-    left: 200px;
-    top: 200px;
-  }
-  75% {
-    background-color: green;
-    left: 0px;
-    top: 200px;
-  }
-  100% {
-    background-color: red;
-    left: 0px;
-    top: 0px;
-  }*/
-
-  from {
-    left: 0px;
-  }
-  to {
-    left: 300px;
-  }
 }

@@ -44,6 +44,7 @@
 
 .heart {
   margin-left: 30px;
+  cursor: pointer !important;
 }
 
 .product-card .check-box {

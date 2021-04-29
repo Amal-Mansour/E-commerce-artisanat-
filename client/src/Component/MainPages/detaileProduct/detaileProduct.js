@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { GlobalState } from "../../../GlobalState";
 import ProductItem from "../utils/productItem/ProductItem";
-import bayNow from "../../../assets/bay now.png";
+import bayNow from "../../../assets/bay icon.png";
 import "./detaileProducts.css";
 
 function DetailProduct() {

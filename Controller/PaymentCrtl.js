@@ -1,55 +1,61 @@
-const Payments = require("../models/paymentModel");
-const Users = require("../models/userModel");
-const Products = require("../models/productModel");
+//const Payment = require("../Controller/PaymentCrtl");
+const Users = require("../models/UserModel");
+const Payments = require("../models/PayementModel");
 
 const PaymentCrtl = {
-  getPayments: async (req, res) => {
-    try {
-      const payments = await Payments.find();
-      res.send(payments);
-    } catch (err) {
-      return res.status(500).send({ msg: err.message });
-    }
-  },
   createPayment: async (req, res) => {
+    //res.send("test payment");
     try {
-      const user = await Users.findById(req.user.id).select("name email");
-      if (!user) return res.status(400).send({ msg: "User does not exist." });
-
-      const { cart, paymentID, fname, lname, email, phone, address } = req.body;
-
-      const { _id, name, email } = user;
-
-      const newPayment = new Payments({
-        user_id: _id,
+      const {
         fname,
         lname,
         email,
         phone,
-        cart,
+        adress,
+        country,
+        city,
+        postal,
         paymentID,
-        address,
+      } = req.body;
+      const newOrder = await Payments({
+        fname,
+        lname,
+        email,
+        phone,
+        adress,
+        country,
+        city,
+        postal,
+        paymentID,
       });
-
-      cart.filter((item) => {
-        return sold(item._id, item.quantity, item.sold);
-      });
-
-      await newPayment.save();
-      res.send({ msg: "Payment Succes!" });
-    } catch (err) {
-      return res.status(500).send({ msg: err.message });
+      if (paymentID)
+        return res.status(400).send({ msg: "order already exist" });
+      await newOrder.save();
+      return res.send("order passed succesfuly");
+      //res.send.(newOrder)
+    } catch (error) {
+      return res.status(500).send({ msg: error.message });
     }
   },
-};
 
-const sold = async (id, quantity, oldSold) => {
-  await Products.findOneAndUpdate(
-    { _id: id },
-    {
-      sold: quantity + oldSold,
+
+
+
+  getPaymentsDetail: async (req, res) => {
+    
+      //res.send(" test get payment");
+
+      try {
+        const payments = await Payments.find()
+        res.send(payments)
+    } catch (err) {
+        return res.status(500).json({msg: err.message})
     }
-  );
-};
+    },
+
+  }
+  
+
+
 
 module.exports = PaymentCrtl;

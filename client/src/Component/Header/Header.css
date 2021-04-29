@@ -20,12 +20,10 @@
   padding: 15px;
   color: #ff7171;
 }
-.link:hover {
-  color: black;
-}
 
 .link:hover {
-  transform: scale(1.4) !important;
+  color: crimson;
+  transform: scale(1.1) !important;
 }
 
 .is-active {

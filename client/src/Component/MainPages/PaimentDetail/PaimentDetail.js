@@ -14,12 +14,9 @@ function PaimentDetail() {
   return (
     <div className="paymentDetail">
       <Button className="bay-button" variant="primary" onClick={handleShow}>
-        Pay Now
+        Choose Payment
       </Button>
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Choose your payement:</Modal.Title>
-        </Modal.Header>
         <Modal.Body>
           <Link to="/set_Information">
             <img src={Cash} alt="cash" className="img-fluid" />

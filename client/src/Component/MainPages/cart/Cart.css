@@ -1,6 +1,5 @@
 .detail-cart {
   position: relative;
-  border: 1px solid #9fd8df;
   border-radius: 12px;
   transform: scaleY(0.98);
   background-color: #f0e4d7;
@@ -10,7 +9,8 @@
   align-items: center;
 }
 
-.detail-img {
+.description {
+  font-family: "Times New Roman", Times, serif;
 }
 
 .amount span {
@@ -34,13 +34,13 @@
 
 .total {
   border-radius: 12px;
-  width: 900px;
+  width: 550px;
   height: 50px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-top: 120px;
-  margin-left: 350px;
+  margin-left: 500px;
   background-color: #f0e4d7;
 }
 
@@ -48,8 +48,19 @@
   color: #ff7171;
 }
 
-.btn {
+.btn-total {
   background-color: #28b5b5 !important;
   font-weight: 15px !important;
   border-radius: 18px !important;
+}
+
+.quantity {
+  border-radius: 50% !important;
+}
+
+.amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

@@ -11,8 +11,8 @@ function Register() {
     password: "",
   });
 
-  const [isLogged, setIsLogged] = useState(false);
-  const onChangeInput = (e) => {
+
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
@@ -23,6 +23,10 @@ function Register() {
       localStorage.setItem("firstLogin", true);
 
       window.location.href = "/";
+      toast.success("register sucssefuly", {
+        position: toast.POSITION.TOP_RIGHT,
+        className: "foo-bar",
+      });
     } catch (err) {
       toast.error(err.response.data.msg, {
         position: toast.POSITION.TOP_RIGHT,
@@ -32,68 +36,73 @@ function Register() {
   };
   return (
     <div className="login_page">
+      <div className="login_hier">
+        <h6 className="login_animation ">Pleaze Register to by</h6>
+      </div>
       <div className="form-boxs">
-        <div className="button-boxs">
-          <button type="button" className="toggel-button">
-            Regiter
-          </button>
-          <Link to="/login">
+        <div>
+          <div className="button-boxs">
             <button type="button" className="toggel-button">
-              Login
+              Regiter
             </button>
-          </Link>
-        </div>
+            <Link to="/login">
+              <button type="button" className="toggel-button">
+                Login
+              </button>
+            </Link>
+          </div>
 
-        <div className="sociale-button">
-          <a href="#" className="fa fa-facebook"></a>
-          <a href="#" class="fa fa-pinterest"></a>
-          <a href="#" class="fa fa-twitter"></a>
-          <a href="#" class="fa fa-google"></a>
-        </div>
-        <div className="from-box">
-          <form className="input-group" onSubmit={registerSubmit}>
-            <input
-              type="text"
-              name="name"
-              required
-              placeholder="Enter Username"
-              value={user.name}
-              onChange={onChangeInput}
-              className="formBasicInput"
-            />
+          <div className="sociale-button">
+            <a   href="https://www.facebook.com/" className="fa fa-facebook"></a>
+            <a   href="https://www.facebook.com/" className="fa fa-pinterest"></a>
+            <a  href="https://www.facebook.com/" className="fa fa-twitter"></a>
+            <a href="https://www.facebook.com/"  className="fa fa-google"></a>
+          </div>
+          <div className="from-box">
+            <form className="input-group" onSubmit={registerSubmit}>
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder="Enter Username"
+                value={user.name}
+                onChange={handleChange}
+                className="formBasicInput"
+              />
 
-            <input
-              type="email"
-              name="email"
-              required
-              placeholder="Enter email"
-              value={user.email}
-              onChange={onChangeInput}
-              className="formBasicInput"
-            />
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="Enter email"
+                value={user.email}
+                onChange={handleChange}
+                className="formBasicInput"
+              />
 
-            <input
-              type="password"
-              name="password"
-              required
-              autoComplete="on"
-              placeholder="Password"
-              value={user.password}
-              onChange={onChangeInput}
-              className="formBasicInput"
-            />
-            <Form.Check
-              type="checkbox"
-              id="autoSizingCheck2"
-              className="check"
-            />
-            <span>Remember Password</span>
-            <div className="btn-user">
-              <Button type="submit" className="submit-btn">
-                Submit
-              </Button>
-            </div>
-          </form>
+              <input
+                type="password"
+                name="password"
+                required
+                autoComplete="on"
+                placeholder="Password"
+                value={user.password}
+                onChange={handleChange}
+                className="formBasicInput"
+              />
+              <Form.Check
+                type="checkbox"
+                id="autoSizingCheck2"
+                className="check"
+              />
+              <span>Remember Password</span>
+              <div className="btn-user">
+                <Button type="submit" className="submit-btn">
+                  Submit
+                </Button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>

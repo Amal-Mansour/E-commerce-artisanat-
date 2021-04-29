@@ -12,7 +12,7 @@ function Login() {
     email: "",
     password: "",
   });
-  const onChangeInput = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
@@ -32,9 +32,9 @@ function Login() {
   };
   return (
     <div calssName="login_page">
-      {/*<div className="login_hier">
+      <div className="login_hier">
         <h6 className="login_animation ">Pleaze Login to by</h6>
-      </div>*/}
+      </div>
       <div className="form-box">
         <div>
           <div className="button-box">
@@ -48,20 +48,24 @@ function Login() {
             </Link>
           </div>
           <div className="sociale-button">
-            <a href="#" className="fa fa-facebook"></a>
-            <a href="#" className="fa fa-pinterest"></a>
-            <a href="#" className="fa fa-twitter"></a>
-            <a href="#" className="fa fa-google"></a>
+            <a  href="https://www.facebook.com/" className="fa fa-facebook"></a>
+            <a href="https://www.facebook.com/"  className="fa fa-pinterest"></a>
+            <a href="/https://www.facebook.com/"  className="fa fa-twitter"></a>
+            <a   href="https://www.facebook.com/" className="fa fa-google"></a>
           </div>
           <div className="from-box">
-            <form className="input-group" onSubmit={loginSubmit}>
+            <form
+              className="input-group"
+              action="/login"
+              onSubmit={loginSubmit}
+            >
               <input
                 type="email"
                 name="email"
                 required
                 placeholder="Enter email"
                 value={user.email}
-                onChange={onChangeInput}
+                onChange={handleChange}
                 className="formBasicInput"
               />
 
@@ -71,7 +75,7 @@ function Login() {
                 required
                 placeholder=" Enter password"
                 value={user.password}
-                onChange={onChangeInput}
+                onChange={handleChange}
                 className="formBasicInput"
               />
 

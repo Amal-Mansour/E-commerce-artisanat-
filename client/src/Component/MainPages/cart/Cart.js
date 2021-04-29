@@ -54,13 +54,12 @@ function Cart() {
   };
 
   const removeProduct = (id) => {
-    if (
-      (toast.warn("this product will completly  deleted from cart"),
-      {
-        position: toast.POSITION.TOP_RIGHT,
-        className: "foo-bar",
-      })
-    ) {
+    //if (window.confirm("Do you want to delete this product?")) 
+       if (toast.warn("this product will completly  deleted from cart"),
+        {
+          position: toast.POSITION.TOP_RIGHT,
+          className: "foo-bar",
+        }){
       cart.forEach((item, index) => {
         if (item._id === id) {
           cart.splice(index, 1);
@@ -71,23 +70,15 @@ function Cart() {
     }
   };
 
-  //const tranSuccess = async (payment) => {
-  //  console.log(payment);
-  //};
-
   if (cart.length === 0) {
-    return (
-      <h2 style={{ textAlign: "center", fontSize: "5rem" }}>cart empty</h2>
-    );
+    return <h2 style={{ textAlign: "center", fontSize: "5rem" }}>Cart is Empty</h2>
+    
   }
-
   return (
     <div>
       <div className="total">
         <h3>Total : $ {total}</h3>
         <PaimentDetail />
-
-        {/*<PaypalButton total={total} tranSuccess={tranSuccess} />*/}
       </div>
 
       {cart.map((product) => (
@@ -109,20 +100,25 @@ function Cart() {
             <div className="amount">
               <Button
                 variant="info"
-                className="btn"
+                className="quantity"
                 onClick={() => increment(product._id)}
               >
-                {" "}
-                +{" "}
+                +
               </Button>
-              <span>{product.quantity}</span>
+              <span
+                style={{
+                  fontFamily: "105px",
+                  fontSize: "25px",
+                }}
+              >
+                {product.quantity}
+              </span>
               <Button
                 variant="info"
-                className="btn"
+                className="quantity"
                 onClick={() => decrement(product._id)}
               >
-                {" "}
-                -{" "}
+                -
               </Button>
             </div>
 
