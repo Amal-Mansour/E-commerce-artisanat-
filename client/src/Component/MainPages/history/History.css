@@ -25,3 +25,50 @@ th {
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
+
+.the-bill{
+  width: 880px;
+  height: 620px;
+  background-color: whitesmoke;
+  border-radius: 3px solid  red ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 370px;
+  margin-top: 90px;
+}
+
+.infor{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cordonner{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.adress{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+
+.product-det{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.the-bill{
+  text-align: center;
+}

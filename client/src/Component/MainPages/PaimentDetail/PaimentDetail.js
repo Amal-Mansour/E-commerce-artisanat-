@@ -25,11 +25,13 @@ function PaimentDetail() {
 
           <br />
           <hr />
-          <img src={Credit} alt="credit" className="img-fluid" />
+          < a href='http://www.stb.com.tn/en/particuliers/cartes-bancaires/' target='http://www.stb.com.tn/en/particuliers/cartes-bancaires/'>
+          <img src={Credit} alt="credit" className="img-fluid" /></a>
           <span className="payment_title"> Payment by Credit Card </span>
           <br />
           <hr />
-          <img src={Smart} alt="smart" className="img-fluid" />
+          <a href='https://www.poste.tn/index_service.php?code_menu=82&code_sous_menu=95' target='https://www.poste.tn/index_service.php?code_menu=82&code_sous_menu=95'>
+          <img src={Smart} alt="smart" className="img-fluid" /></a>
           <span className="payment_title"> Payment by E-Dinar smart </span>
         </Modal.Body>
         <Modal.Footer>

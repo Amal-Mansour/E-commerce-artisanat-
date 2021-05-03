@@ -8,6 +8,28 @@
 
 @import url("../utils/productItem/ProductItem.css");
 
+.delete-all{
+  text-align: right;
+  margin: 20px;
+}
+.delete-all input{
+  height: 25px;
+  width: 25px;
+  transform: translateY(5px);
+  margin: 0 15px;
+}
+.delete-all span{
+  text-transform: uppercase;
+  color: rgb(3, 165, 206);
+  letter-spacing: 1.3px;
+}
+.delete-all button{
+  border: 1px solid crimson;
+  padding: 10px 25px;
+  color: crimson;
+  text-transform: uppercase;
+}
+
 .filter_menu {
   width: 1510px;
   height: 50px;
@@ -39,13 +61,5 @@
   margin-top: 70px;
   margin-left: 60px;
 }
-/*-------------------- Load More ---------------
-.load_more {
-  text-align: center;
-}
-.load_more button {
-  padding: 10px 25px;
-  margin-bottom: 20px;
-  border: 1px solid #555;
-  text-transform: capitalize;
-}*/
+
+

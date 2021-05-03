@@ -22,8 +22,18 @@ function History() {
         <tbody>
           <tr>
             <td>608189dac8574d09d4819e3f</td>
-            <td>24 April 2021</td>
-            <td>$ 350</td>
+            <td>26 April 2021</td>
+            <td>$ 250</td>
+            <td>
+              <Link to={`/Facture`}>View</Link>
+            </td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>608189dac8574d09d4819e3f</td>
+            <td>28 April 2021</td>
+            <td>$ 150</td>
             <td>
               <Link to={`/Facture`}>View</Link>
             </td>
@@ -32,7 +42,7 @@ function History() {
         <tbody>
           <tr>
             <td>6080a05edada1d2a18cba296</td>
-            <td>25 April 2021</td>
+            <td>28 April 2021</td>
             <td>$ 80</td>
             <td>
               <Link to={`/Facture`}>View</Link>

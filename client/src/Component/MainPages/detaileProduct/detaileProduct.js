@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { GlobalState } from "../../../GlobalState";
 import ProductItem from "../utils/productItem/ProductItem";
 import bayNow from "../../../assets/bay icon.png";
+
 import "./detaileProducts.css";
 
 function DetailProduct() {
@@ -46,15 +47,24 @@ function DetailProduct() {
             modern uses with authenticity.
           </p>
           <p>Sold:50%</p>
-          {!isLogged ? (
+
+          <div>
+          {!isLogged ? 
             <Link to="/login" className="cart">
               <img src={bayNow} alt="bay" width="15%" />
             </Link>
-          ) : (
+           : 
             <Link to="/cart" className="cart">
               <img src={bayNow} alt="bay" width="15%" />
             </Link>
-          )}
+          }
+
+          
+         </div>
+
+
+
+
         </div>
       </div>
       <div>

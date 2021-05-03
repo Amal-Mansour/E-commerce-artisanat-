@@ -106,9 +106,7 @@ function Header() {
           )}
         </Nav>
 
-        <div className="menu">
-          <img src={Close} alt="close" width="30" onClick={() => setMenu(!menu)} />
-        </div>
+        
 
         {
                 isAdmin ? '' 

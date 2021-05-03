@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const cloudinary = require("cloudinary");
 const { restart } = require("nodemon");
-const auth = require("../middleware/auth");
-const authAdmin = require("../middleware/authAmin");
+//const auth = require("../middleware/auth");
+//const authAdmin = require("../middleware/authAmin");
 const fs = require("fs");
 
 // we will upload on cloudinary
@@ -13,7 +13,7 @@ cloudinary.config({
 });
 
 // Upload image only admin can use
-router.post("/upload", auth, authAdmin, (req, res) => {
+router.post("/upload", (req, res) => {
   try {
     if (!req.files || Object.keys(req.files).length === 0)
       return res.status(400).send({ msg: "No files were uploaded." });
@@ -47,7 +47,7 @@ router.post("/upload", auth, authAdmin, (req, res) => {
 
 //delete image only admin can use
 
-router.post("/destroy", auth, authAdmin, (req, res) => {
+router.post("/destroy", (req, res) => {
   try {
     const { public_id } = req.body;
     if (!public_id) return res.status(400).send({ msg: "No images Selected" });

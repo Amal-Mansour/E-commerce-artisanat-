@@ -20,7 +20,7 @@ app.use("/user", require("./Routes/userRouter"));
 app.use("/api", require("./Routes/categoryRouter"));
 app.use("/api", require("./Routes/upload"));
 app.use("/api", require("./Routes/ProductsRouter"));
-//app.use("/user", require("./Routes/PaymentRouter"));
+app.use("/user", require("./Routes/PaymentRouter"));
 
 // connnect to mongodb
 const URI = process.env.MONGODB_URL;
@@ -41,6 +41,7 @@ mongoose.connect(
 app.get("/", (req, res) => {
   res.send({ msg: "wellcome to my app" });
 });
+//app.get('/error',(req,res) => res.send(error))
 
 const PORT = process.env.PORT || 7000;
 app.listen(PORT, () => {

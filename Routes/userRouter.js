@@ -12,6 +12,6 @@ router.get("/refresh_token", userCtrl.refreshtoken);
 
 router.get("/infor", auth, userCtrl.getUser);
 
-router.patch("/addcart", auth, userCtrl.addCart);
+router.patch("/addcart", userCtrl.addCart);
 
 module.exports = router;
